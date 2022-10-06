@@ -5,8 +5,10 @@ import { Request, Response } from "express";
 import "reflect-metadata";
 import { router } from "./routes/users.routes";
 import { appDataSource } from "./db";
+import { errorHandler } from "./middlewares/pre/jwt";
+import { routerBooks } from "./routes/books.routes";
 
-// initialize express
+
 const app = express();
 
 //middlewares
@@ -14,16 +16,22 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
-// route default
+// Ruta por defecto
 app.get('/api/v1', (req: Request, res: Response) => {
       res.send('welcome to api');
 });
 
-// routes api books
+// Rutas autenticacion de usuarios
 app.use(router);
 
-// init server
-async function main(): Promise<any> {
+// Rutas Books
+app.use(routerBooks)
+
+//middlewares manejo de errores
+app.use(errorHandler)
+
+// levantar servidor
+async function main() {
       try {
             app.listen(9000)
             await appDataSource.initialize()

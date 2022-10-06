@@ -2,8 +2,13 @@ import {
       Entity,
       PrimaryGeneratedColumn,
       Column,
-      BaseEntity
+      BaseEntity,
+      OneToMany
 } from "typeorm";
+
+import { Book } from "./Book";
+
+
 
 @Entity()
 export class User extends BaseEntity {
@@ -23,5 +28,10 @@ export class User extends BaseEntity {
       @Column("varchar")
       password: string;
 
+      @OneToMany(() => Book, (book) => book.user)
+      book: Book[];
+
 }
+
+
 
