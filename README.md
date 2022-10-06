@@ -7,7 +7,7 @@ Api rest Books Nodejs, Express, PostgreSQL, Typeorm
 
 # Descripcion
 
-he realizado una api rest de libros, Nodejs con el framework express y typescript para el manejo de tipos, en este proyecto implemente  jwt(jsonWebToken) para la autenticacion de usuarios
+he realizado una api rest de libros, utilize Nodejs con el framework express orientado a typescript para el manejo de tipos, en este proyecto implemente  jwt(jsonWebToken) para la autenticacion de usuarios
 cifrado de contraseñas con bcrypt para la privacidad de los usuarios y Relaciones entre los usuarios y los libros con typeorm, y un crud para crear, leer, actualizar y eliminar libros.
 
 
@@ -30,7 +30,8 @@ cifrado de contraseñas con bcrypt para la privacidad de los usuarios y Relacion
 - localhost:9000/api/v1/books/:id/update: realize esta request para actualizar un libro
 
 ### ¿Como correr el proyecto si lo estoy forkeando?
-para correr este proyecto en tu local en caso de que lo hayas forkeado debes ejecutar el siguiente:
+para correr este proyecto en tu local en caso de que lo hayas forkeado debes ejecutar el siguiente comando:
+
 - npm run start:dev
 
 
