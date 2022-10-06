@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { create, login } from "../controllers/users.controllers";
-import { errorHandler, test } from "../middlewares/pre/jwt";
+
 
 
 export const router = Router();
