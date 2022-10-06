@@ -50,24 +50,4 @@ export const login = async (req: Request, res: Response, next: any) => {
 }
 
 
-// Ruta protegida
-export const findAll = async (req: Request, res: Response, next: any) => {
-
-      try {
-            // query que traiga a todos los usuarios
-            const listUsers = await User.find({ relations: { book: true } });
-            return res.status(200).json(
-                  {
-                        message: 'Estos son todos los usuarios',
-                        listUsers
-                  }
-            );
-      } catch (err) {
-            next(err);
-      }
-
-
-}
-
-
 
